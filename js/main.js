@@ -1,3 +1,4 @@
+
 (function ($) {
     "use strict";
 
@@ -114,6 +115,33 @@
             }
         }
     });
+
+
+  // Import the functions you need from the SDKs you need
+  
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+//   const firebaseConfig = {
+//     apiKey: "AIzaSyBxgXGLZm8Kv50ZAsSGw6VnaUg1rQ3-rdc",
+//     authDomain: "abc-restaurant-26986.firebaseapp.com",
+//     databaseURL: "https://abc-restaurant-26986-default-rtdb.asia-southeast1.firebasedatabase.app",
+//     projectId: "abc-restaurant-26986",
+//     storageBucket: "abc-restaurant-26986.appspot.com",
+//     messagingSenderId: "14819094247",
+//     appId: "1:14819094247:web:c5fc4da8453e90c5bebc42",
+//     measurementId: "G-QL09DN3WXJ"
+//   };
+
+//   // Initialize Firebase
+//   const app = initializeApp(firebaseConfig);
+//   const analytics = getAnalytics(app);
+//   const db = getdatabase(app);
+
+//   document.getElementById("submit")
+
     
 })(jQuery);
 
