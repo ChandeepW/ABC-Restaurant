@@ -107,28 +107,32 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
+                                        <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" required />
                                         <label for="datetime">Date & Time</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <select class="form-select" id="select1">
-                                          <option value="1">People 1</option>
-                                          <option value="2">People 2</option>
-                                          <option value="3">People 3</option>
+                                        <select class="form-select" id="select1" required>
+                                            <option value="" disabled selected>Select Number of People</option>
+                                            <option value="1">1 Person</option>
+                                            <option value="2">2 People</option>
+                                            <option value="3">3 People</option>
+                                            <option value="4">4 People</option>
+                                            <option value="5">5 People</option>
+                                            <!-- Add more options as needed -->
                                         </select>
                                         <label for="select1">No Of People</label>
                                     </div>
@@ -140,7 +144,8 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
+                                    <!-- Changed type to "button" to prevent default form submission -->
+                                    <button class="btn btn-primary w-100 py-3" id="bookingForm" type="button">Book Now</button>
                                 </div>
                             </div>
                         </form>
@@ -153,7 +158,7 @@
             <div class="modal-dialog">
                 <div class="modal-content rounded-0">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">YouTube Video</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -165,7 +170,7 @@
                 </div>
             </div>
         </div>
-        <!-- Reservation Start -->
+        <!-- Reservation End -->
 
 
         <!-- Footer Start -->
@@ -182,14 +187,14 @@
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>145,Galle Road, Colombo</p>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>145, Galle Road, Colombo</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+94 11 2796964</p>
                         <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@signature.com</p>
                         <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
@@ -203,8 +208,8 @@
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Newsletter</h4>
                         <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
                         <div class="position-relative mx-auto" style="max-width: 400px;">
-                            <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                            <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email" id="newsletterEmail">
+                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2" id="newsletterButton">SignUp</button>
                         </div>
                     </div>
                 </div>
@@ -245,6 +250,107 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script> -->
+    <script src="js/script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js"></script>
+
+
+    <!-- Firebase and Custom Scripts -->
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCXIwq80fFA_UEC9lUp8eogdy0gm7uEMR8",
+            authDomain: "abc-rest.firebaseapp.com",
+            databaseURL: "https://abc-rest-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "abc-rest",
+            storageBucket: "abc-rest.appspot.com",
+            messagingSenderId: "606772076544",
+            appId: "1:606772076544:web:25a6e1ce3fd9db773bb8e5",
+            measurementId: "G-QL09DN3WXJ"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        // Handle Booking Form Submission
+        document.getElementById("bookingForm").addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const datetime = document.getElementById("datetime").value.trim();
+            const select = document.getElementById("select1").value;
+            const extra = document.getElementById("message").value.trim();
+
+            // Basic validation
+            if (!name || !email || !datetime || !select) {
+                alert("Please fill in all required fields.");
+                return;
+            }
+
+            // Create a unique key for each booking
+            const newBookingRef = ref(db, 'bookings/' + Date.now());
+
+            // Save data to Firebase
+            set(newBookingRef, {
+                username: name,
+                email: email,
+                date: datetime,
+                numberOfPeople: select,
+                specialRequest: extra
+            })
+                .then(() => {
+                    alert("Booking Successful");
+                    // Optionally, reset the form
+                    document.querySelector("form").reset();
+                })
+                .catch((error) => {
+                    console.error("Error saving data:", error);
+                    alert("There was an error processing your booking. Please try again.");
+                });
+        });
+
+        // Initialize Datetime Picker
+        $(function () {
+            $('#date3').datetimepicker({
+                icons: {
+                    time: 'fa fa-clock',
+                    date: 'fa fa-calendar',
+                    up: 'fa fa-arrow-up',
+                    down: 'fa fa-arrow-down',
+                    previous: 'fa fa-chevron-left',
+                    next: 'fa fa-chevron-right',
+                    today: 'fa fa-screenshot',
+                    clear: 'fa fa-trash',
+                    close: 'fa fa-remove'
+                },
+                format: 'YYYY-MM-DD HH:mm'
+            });
+        });
+
+        // Handle Video Modal
+        const videoModal = document.getElementById('videoModal');
+        const videoSrc = "https://www.youtube.com/embed/DWRcNpR6Kdc";
+
+        videoModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const src = button.getAttribute('data-src');
+            const video = videoModal.querySelector('#video');
+            video.src = src + "?autoplay=1";
+        });
+
+        videoModal.addEventListener('hidden.bs.modal', function () {
+            const video = videoModal.querySelector('#video');
+            video.src = "";
+        });
+    </script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
